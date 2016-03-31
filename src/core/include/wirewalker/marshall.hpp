@@ -30,7 +30,7 @@ namespace wirewalker
     }
 
     template <typename ...Ts>
-    Packet marshall(Ts && ...ts)
+    Packet marshallSequence(Ts && ...ts)
     {
         auto fullSize = marshallSize(ts...);
         auto ret = Packet{fullSize};

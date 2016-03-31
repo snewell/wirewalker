@@ -1,6 +1,5 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <cppunit/TestFixture.h>
-#include <boost/concept_check.hpp>
 
 #include <wirewalker/compressed_int.hpp>
 #include <wirewalker/marshall.hpp>
@@ -14,7 +13,7 @@ namespace
     template <typename T>
     void marshallVerify(T const &val)
     {
-        auto p = marshall(val);
+        auto p = marshallSequence(val);
         auto um = Unmarshaller(p);
         auto readVal = unmarshall<T>(um);
         CPPUNIT_ASSERT_EQUAL(val, readVal);

@@ -1,6 +1,5 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <cppunit/TestFixture.h>
-#include <boost/concept_check.hpp>
 
 #include <string>
 

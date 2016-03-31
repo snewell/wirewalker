@@ -23,6 +23,9 @@ namespace wirewalker
                    Size         amount);
 
     private:
+        void validate(Size offset,
+                      Size amount) const;
+
         std::vector<Byte> _data;
     };
 

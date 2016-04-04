@@ -17,6 +17,8 @@ namespace wirewalker
 
         std::vector<Byte> const& getData() const noexcept;
 
+        static InterfaceId const WILDCARD;
+
     private:
         std::vector<Byte> _data;
         std::uint8_t _registry;

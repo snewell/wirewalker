@@ -13,6 +13,7 @@ namespace wirewalker
     public:
         enum class Class
         {
+            BROADCAST = 0x00,
             MAC48 = 0x02,
             EMAIL = 0x03
         };
@@ -23,6 +24,8 @@ namespace wirewalker
         Class getClass() const noexcept;
 
         std::vector<Byte> const& getData() const noexcept;
+
+        static ObjectId const BROADCAST;
 
         class Builder
         {

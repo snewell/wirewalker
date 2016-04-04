@@ -7,6 +7,8 @@
 
 using wirewalker::ObjectId;
 
+ObjectId const ObjectId::BROADCAST = {std::vector<Byte>{ }, ObjectId::Class::BROADCAST};
+
 ObjectId::ObjectId(std::vector<Byte> data,
                    Class             cls)
   : _data{std::move(data)},
@@ -54,7 +56,9 @@ namespace wirewalker
         auto raw = unmarshall<Compressed32>(um);
         switch(raw)
         {
+            MAKE_OID_CLASS_CASE(BROADCAST);
             MAKE_OID_CLASS_CASE(EMAIL);
+            MAKE_OID_CLASS_CASE(MAC48);
         }
     }
 

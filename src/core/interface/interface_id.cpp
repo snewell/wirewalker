@@ -6,6 +6,8 @@
 
 using wirewalker::InterfaceId;
 
+InterfaceId const InterfaceId::WILDCARD = InterfaceId{0, std::vector<Byte>{1}};
+
 namespace
 {
     void verifyIdRegistry(std::uint8_t registry)

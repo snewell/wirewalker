@@ -11,6 +11,8 @@ set_target_properties(wwoap PROPERTIES
                       SOVERSION ${PROJECT_VERSION_MAJOR})
 target_link_libraries(wwoap wwcore)
 
-add_executable(wwoap_units test_runner.cpp ${common_units} ${request_units})
-target_link_libraries(wwoap_units cppunit wwoap)
-add_test(wwoap_units wwoap_units)
+if   (FOUND_CPPUNIT)
+    add_executable(wwoap_units test_runner.cpp ${common_units} ${request_units})
+    target_link_libraries(wwoap_units cppunit wwoap)
+    add_test(wwoap_units wwoap_units)
+endif()

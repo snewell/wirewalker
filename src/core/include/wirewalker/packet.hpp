@@ -53,6 +53,8 @@ namespace wirewalker
 
         Size getOffset() const noexcept;
 
+        void setOffset(Size offset);
+
         void read(Byte * buffer,
                   Size   size);
 

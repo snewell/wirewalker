@@ -20,6 +20,11 @@ Unmarshaller::Unmarshaller(Packet &packet,
   : _packet{&packet},
     _offset{offset} { }
 
+void Unmarshaller::setOffset(Size offset)
+{
+    _offset = offset;
+}
+
 void Unmarshaller::read(Byte * buffer,
                         Size   size)
 {
